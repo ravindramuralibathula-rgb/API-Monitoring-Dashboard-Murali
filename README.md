@@ -1,6 +1,6 @@
 # API Monitoring Dashboard
 
-[![CI](https://github.com/yourusername/API-Monitoring-Dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/API-Monitoring-Dashboard/actions/workflows/ci.yml)
+[![CI](https://github.com/code-xon/API-Monitoring-Dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/code-xon/API-Monitoring-Dashboard/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://docker.com)
 
@@ -64,7 +64,7 @@ A comprehensive, production-ready, open-source API monitoring platform built wit
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/API-Monitoring-Dashboard.git
+   git clone https://github.com/code-xon/API-Monitoring-Dashboard.git
    cd API-Monitoring-Dashboard
    ```
 
@@ -191,6 +191,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by [Your Name]**
+**Made with ❤️ by Ramkrishna**
 
-[⭐ Star this repo](https://github.com/yourusername/API-Monitoring-Dashboard) if you find it useful!
+**Lead Developer**: Ramkrishna  
+**Support Email**: ramkrishna@code-xon.fun  
+**GitHub**: [@code-xon](https://github.com/code-xon)
+
+[⭐ Star this repo](https://github.com/code-xon/API-Monitoring-Dashboard) if you find it useful!
