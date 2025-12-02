@@ -1,83 +1,196 @@
 # API Monitoring Dashboard
 
-An open-source application for monitoring HTTP APIs with real-time dashboards, alerting, and metrics.
+[![CI](https://github.com/yourusername/API-Monitoring-Dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/API-Monitoring-Dashboard/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://docker.com)
 
-## Features
+A comprehensive, production-ready, open-source API monitoring platform built with Spring Boot and React. Monitor your APIs in real-time with health checks, alerting, SLA tracking, and beautiful dashboards.
 
-- Register and monitor REST APIs with health checks
-- JSON/YAML body support for POST checks
-- Global and per-API timeouts, retry attempts
-- Track latency, status codes, uptime (daily/weekly/monthly)
-- Detailed log history with pagination and search
-- JWT authentication with roles (Admin, User)
-- Email + webhook alerts with thresholds
-- Dashboard with charts, metrics, and real-time updates
-- Environment support (Dev, QA, Prod)
-- API grouping and tagging
-- Multi-user system with user management
-- SLA management (99.9%, 99.5%, 95%)
-- SLA violation reports
-- Dark mode UI
-- Role-based access control
-- Audit logging
-- API versioning support
-- Custom HTTP headers and payload templates
-- Regex validation and keyword search in responses
-- Log archiving and cleanup
-- Export logs as CSV, metrics as JSON
-- Import APIs via JSON
-- API cloning and bulk operations
-- Docker-compose microservices setup
-- PgAdmin and MailHog for testing
+## ✨ Features
 
-## Tech Stack
+### Core Monitoring
+- 🔍 **Health Checks**: Configurable HTTP checks with custom headers, payloads, and timeouts
+- 📊 **Real-time Metrics**: Uptime, latency, status codes, response times
+- 🚨 **Smart Alerting**: Rule-based alerts with email/webhook notifications
+- 📈 **SLA Tracking**: Monitor service level agreements with violation reports
+- 🌍 **Multi-Environment**: Support for Dev, QA, Prod environments
 
-- Backend: Java 17, Spring Boot 3.x
-- Frontend: React 18, TypeScript, Tailwind CSS
-- Database: PostgreSQL
-- Caching/Queue: Redis
-- Containerization: Docker, docker-compose
+### User Management
+- 🔐 **JWT Authentication**: Secure login with role-based access control
+- 👥 **Multi-User**: Admin and user roles with session management
+- 📧 **Email Verification**: Password reset and account verification
 
-## Quickstart
+### Advanced Features
+- 🏷️ **API Grouping & Tagging**: Organize APIs with groups and tags
+- 🔄 **Real-time Updates**: WebSocket-powered live dashboards
+- 📋 **Audit Logging**: Track all user actions and system events
+- 📤 **Export/Import**: CSV exports and JSON API imports
+- 🧹 **Auto Cleanup**: Scheduled log archiving and cleanup
 
-Prerequisites: Docker and docker-compose
+### DevOps & Operations
+- 🐳 **Docker Ready**: Complete containerization with docker-compose
+- 🔧 **CI/CD**: GitHub Actions for automated testing and deployment
+- 📚 **API Documentation**: Auto-generated Swagger UI
+- 🧪 **Testing**: Unit and integration tests included
+- 📖 **Documentation**: Comprehensive setup and API guides
 
-```bash
-git clone <repo-url>
-cd API-Monitoring-Dashboard
-cd docker
-docker-compose up
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   React UI      │    │  Spring Boot    │    │   PostgreSQL    │
+│   (Frontend)    │◄──►│   (Backend)     │◄──►│   (Database)    │
+│                 │    │                 │    │                 │
+│ - Dashboard     │    │ - REST APIs     │    │ - APIs          │
+│ - API Mgmt      │    │ - Health Checks │    │ - Logs          │
+│ - Alerts        │    │ - Alert Engine  │    │ - Users         │
+│ - Real-time     │    │ - JWT Auth      │    │ - Metrics       │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                              ▲
+                              │
+                       ┌─────────────────┐
+                       │     Redis       │
+                       │   (Caching)     │
+                       └─────────────────┘
 ```
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8080
-- Swagger UI: http://localhost:8080/swagger-ui.html
-- PgAdmin: http://localhost:5050 (admin@example.com / admin)
-- MailHog: http://localhost:8025
+## 🚀 Quick Start
 
-Default user: admin@example.com / Password123!
+### Prerequisites
+- Docker & Docker Compose
+- Git
 
-## Documentation
+### Installation
 
-- [Setup Guide](docs/setup.md)
-- [API Documentation](docs/api.md)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/API-Monitoring-Dashboard.git
+   cd API-Monitoring-Dashboard
+   ```
 
-## Architecture
+2. **Start the services**
+   ```bash
+   cd docker
+   docker-compose up -d
+   ```
 
-- **Backend**: Spring Boot with JPA, JWT auth, scheduled checks.
-- **Frontend**: React with TypeScript, charts.
-- **Database**: PostgreSQL for data, Redis for caching.
-- **Real-time**: WebSocket for updates.
-- **Containerization**: Docker Compose for local dev.
+3. **Access the application**
+   - **Frontend**: http://localhost:3000
+   - **Backend API**: http://localhost:8080
+   - **API Docs**: http://localhost:8080/swagger-ui.html
+   - **Database Admin**: http://localhost:5050 (admin@example.com / admin)
+   - **Email Testing**: http://localhost:8025
 
-## API Documentation
+4. **Login**
+   - **Default User**: admin@example.com
+   - **Password**: Password123!
 
-Swagger UI: http://localhost:8080/swagger-ui.html
+## 📚 Documentation
 
-## Contributing
+- [📖 Setup Guide](docs/setup.md) - Detailed installation and configuration
+- [🔗 API Documentation](docs/api.md) - Complete API reference
+- [🤝 Contributing](CONTRIBUTING.md) - How to contribute
+- [📜 License](LICENSE) - MIT License
 
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## 🛠️ Tech Stack
 
-## License
+### Backend
+- **Java 17** - Runtime
+- **Spring Boot 3.x** - Framework
+- **Spring Security** - Authentication & Authorization
+- **Spring Data JPA** - Database ORM
+- **PostgreSQL** - Primary database
+- **Redis** - Caching & sessions
+- **JUnit 5** - Testing
 
-MIT
+### Frontend
+- **React 18** - UI Framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Recharts** - Data visualization
+- **Axios** - HTTP client
+- **Jest** - Testing
+
+### DevOps
+- **Docker** - Containerization
+- **Docker Compose** - Multi-service orchestration
+- **GitHub Actions** - CI/CD
+- **Maven** - Java build tool
+- **NPM** - Node package manager
+
+## 🔧 Configuration
+
+### Environment Variables
+```bash
+# Database
+DB_HOST=postgres
+DB_PORT=5432
+DB_NAME=monitor
+DB_USER=monitor
+DB_PASSWORD=monitorpass
+
+# Authentication
+JWT_SECRET=your-secret-key
+
+# Email (SMTP)
+SMTP_HOST=smtp-test
+SMTP_PORT=1025
+
+# Frontend
+FRONTEND_URL=http://localhost:3000
+```
+
+### Default Ports
+- Frontend: 3000
+- Backend: 8080
+- Database: 5432
+- Redis: 6379
+- PgAdmin: 5050
+- MailHog: 8025
+
+## 🧪 Testing
+
+### Backend Tests
+```bash
+cd backend
+mvn test
+```
+
+### Frontend Tests
+```bash
+cd frontend
+npm test
+```
+
+### Integration Tests
+```bash
+cd docker
+docker-compose -f docker-compose.test.yml up
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with ❤️ using Spring Boot and React
+- Inspired by modern monitoring platforms
+- Thanks to the open-source community
+
+---
+
+**Made with ❤️ by [Your Name]**
+
+[⭐ Star this repo](https://github.com/yourusername/API-Monitoring-Dashboard) if you find it useful!
