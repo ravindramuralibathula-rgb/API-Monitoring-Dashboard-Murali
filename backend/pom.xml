@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.apimonitor</groupId>
     <artifactId>api-monitor-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>API Monitor Backend</name>
     <description>Backend for API Monitoring Dashboard</description>
     <properties>
